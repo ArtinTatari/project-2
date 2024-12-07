@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block css %}
+	<link rel="stylesheet" href="{% static 'accounts/register.css' %}"
+{% endblock %}
+{% block title %}
+	ثبت نام
+{% endblock %}
+{% block body %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+{% endblock %}
